@@ -7,6 +7,13 @@ class vim::params {
       $set_editor_cmd = "update-alternatives --set editor /usr/bin/${editor_name}"
       $test_editor_set = "test /etc/alternatives/editor -ef /usr/bin/${editor_name}"
     }
+    suse: {
+      $package = 'vim'
+      $editor_name = 'vim'
+      $set_as_default = true
+      $set_editor_cmd = "update-alternatives --set editor /usr/bin/${editor_name}"
+      $test_editor_set = "test /etc/alternatives/editor -ef /usr/bin/${editor_name}"
+    }
     freebsd: {
       $package = 'vim-lite'
       $set_as_default = false
